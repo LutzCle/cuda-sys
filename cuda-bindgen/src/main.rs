@@ -10,11 +10,11 @@ use structopt::StructOpt;
 )]
 struct CudaBindgen {
     /// Output directory
-    #[structopt(name = "output")]
+    #[structopt(name = "output", parse(from_os_str))]
     output: PathBuf,
 
     /// Path where the CUDA is Installed
-    #[structopt(name = "cuda_path")]
+    #[structopt(name = "cuda_path", parse(from_os_str))]
     cuda_path: PathBuf,
 
     /// Build CUDA Driver API
